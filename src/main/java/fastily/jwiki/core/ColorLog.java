@@ -1,5 +1,9 @@
 package fastily.jwiki.core;
 
+import org.apache.logging.log4j.Level;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
@@ -17,6 +21,17 @@ class ColorLog
 	 */
 	private static final DateTimeFormatter df = DateTimeFormatter.ofPattern("MMM dd, yyyy hh:mm:ss a");
 
+    /**
+     * Creating
+     */
+    private static Logger logger = LogManager.getLogger(ColorLog.class);
+
+    /**
+     * Creating a custom log4j level: FYI
+      */
+    final Level fyiLogLevel = Level.forName("FYI", 1);
+
+
 	/**
 	 * Flag indicating whether logging with this object is allowed.
 	 */
@@ -25,12 +40,13 @@ class ColorLog
 	/**
 	 * Constructor, creates a new ColorLog.
 	 * 
-	 * @param enableLogging Set true to allow this ColorLog to print log output.
+	 * @param enableLogging Set true to allow this ColorLog to print log output, otherwise logging with Log4j
 	 */
 	protected ColorLog(boolean enableLogging)
 	{
 		enabled = enableLogging;
 	}
+
 
 	/**
 	 * Logs a message for a wiki method.
@@ -39,11 +55,36 @@ class ColorLog
 	 * @param message The String to print
 	 * @param logLevel The identifier to log the message at (e.g. "INFO", "WARNING")
 	 * @param color The color to print the message with. Output will only be colored if this terminal supports it.
+     * @return normal log if enabled==true, otherwise returns logging with Log4j by matched logLevel.
 	 */
-	private void log(Wiki wiki, String message, String logLevel, CC color)
+	private void log(Wiki wiki, String message, String logLevel, CC color)      //TODO
 	{
 		if (enabled)
 			System.err.printf("%s%n%s: \u001B[3%dm%s: %s\u001B[0m%n", LocalDateTime.now().format(df), logLevel, color.v, wiki, message);
+
+		else
+        {
+            switch(logLevel)
+            {
+                case "error": logger.error(wiki + " - " + message);
+                        break;
+
+                case "warn": logger.warn(wiki + " - " + message);
+                        break;
+
+                case "info": logger.info(wiki + " - " + message);
+                        break;
+
+                case "debug": logger.debug(wiki + " - " + message);
+                        break;
+
+                case "fyi": logger.log(fyiLogLevel, "s");
+                        break;
+
+                default: logger.trace("Incorrect log level");
+
+            }
+        }
 	}
 
 	/**
@@ -51,10 +92,14 @@ class ColorLog
 	 * 
 	 * @param wiki The wiki object to use
 	 * @param s The String to print.
+     * @return normal log if enabled==true, otherwise returns warning log using Log4j
 	 */
 	protected void warn(Wiki wiki, String s)
 	{
-		log(wiki, s, "WARNING", CC.YELLOW);
+	    if(enabled)
+		    log(wiki, s, "WARNING", CC.YELLOW);
+	    else
+            logger.warn(wiki + " - " + s);
 	}
 
 	/**
@@ -62,10 +107,14 @@ class ColorLog
 	 * 
 	 * @param wiki The wiki object to use
 	 * @param s The String to print.
+     * @return normal log if enabled==true, otherwise returns info log using Log4j
 	 */
 	protected void info(Wiki wiki, String s)
 	{
-		log(wiki, s, "INFO", CC.GREEN);
+	    if(enabled)
+		    log(wiki, s, "INFO", CC.GREEN);
+	    else
+            logger.info(wiki + " - " + s);
 	}
 
 	/**
@@ -73,10 +122,14 @@ class ColorLog
 	 * 
 	 * @param wiki The wiki object to use
 	 * @param s The String to print.
+     * @return normal log if enabled==true, otherwise returns error log using Log4j
 	 */
 	protected void error(Wiki wiki, String s)
 	{
-		log(wiki, s, "ERROR", CC.RED);
+	    if(enabled)
+		    log(wiki, s, "ERROR", CC.RED);
+	    else
+	        logger.error(wiki + " - " + s);
 	}
 
 	/**
@@ -84,10 +137,14 @@ class ColorLog
 	 * 
 	 * @param wiki The wiki object to use
 	 * @param s The String to print.
+     * @return normal log if enabled==true, otherwise returns debug log using Log4j
 	 */
 	protected void debug(Wiki wiki, String s)
 	{
-		log(wiki, s, "DEBUG", CC.PURPLE);
+	    if(enabled)
+		    log(wiki, s, "DEBUG", CC.PURPLE);
+	    else
+	        logger.debug(wiki + " - " + s);
 	}
 
 	/**
@@ -95,10 +152,15 @@ class ColorLog
 	 * 
 	 * @param wiki The wiki object to use
 	 * @param s The String to print.
+     * @return normal log if enabled==true, otherwise returns trace log using Log4j
 	 */
 	protected void fyi(Wiki wiki, String s)
 	{
-		log(wiki, s, "FYI", CC.CYAN);
+	    if(enabled)
+		    log(wiki, s, "FYI", CC.CYAN);
+	    else {
+            logger.log(fyiLogLevel, "s");
+        }
 	}
 
 	/**
