@@ -32,12 +32,12 @@ class ColorLog {
     /**
      * Flag indicating whether logging with this object is allowed.
      */
-    protected boolean enabled;
+    protected boolean isLoggingEnabled;
 
     /**
-     * Flag to activate Log4j
+     * Flag to use Log4j
      */
-    private boolean activeLog4j ;
+    private boolean useLog4j;
 
     /**
      * Constructor, creates a new ColorLog, disabling logging with Log4j
@@ -46,19 +46,19 @@ class ColorLog {
      */
     protected ColorLog(boolean enableLogging)
     {
-        enabled = enableLogging;
-        activeLog4j = false;
+        isLoggingEnabled = enableLogging;
+        useLog4j = false;
     }
 
 
     /**
      * Constructor, create a new ColorLog with possibility to use Log4j
      * @param enableLogging Set true to allow this ColorLog to print log output
-     * @param activeLog4j To activate logging with Log4j
+     * @param useLog4j      Set true to use logging with Log4j
      */
-    protected ColorLog(boolean enableLogging, boolean activeLog4j) {
-        this.activeLog4j = activeLog4j;
-        enabled = enableLogging;
+    protected ColorLog(boolean enableLogging, boolean useLog4j) {
+        this.useLog4j = useLog4j;
+        isLoggingEnabled = enableLogging;
     }
 
 
@@ -69,7 +69,7 @@ class ColorLog {
      * @param message  The String to print
      * @param logLevel The identifier to log the message at (e.g. "INFO", "WARNING")
      * @param color    The color to print the message with. Output will only be colored if this terminal supports it.
-     * @return normal log if enabled==true, otherwise returns logging with Log4j by matched logLevel.
+     * @return         Logging by matching logLevel.
      */
     private void log(Wiki wiki, String message, String logLevel, CC color)
     {
@@ -81,13 +81,15 @@ class ColorLog {
      *
      * @param wiki The wiki object to use
      * @param s    The String to print.
-     * @return normal log if enabled==true, otherwise returns warning log using Log4j
+     * @return     If logging is enabled can returns warning log using Log4j, otherwise returns logging output
      */
     protected void warn(Wiki wiki, String s) {
-        if (enabled)
-            log(wiki, s, "WARNING", CC.YELLOW);
-        else
-            logger.warn(wiki + " - " + s);
+        if (isLoggingEnabled) {
+            if (useLog4j)
+                logger.warn(wiki + " - " + s);
+            else
+                log(wiki, s, "WARNING", CC.YELLOW);
+        }
     }
 
     /**
@@ -95,13 +97,15 @@ class ColorLog {
      *
      * @param wiki The wiki object to use
      * @param s    The String to print.
-     * @return normal log if enabled==true, otherwise returns info log using Log4j
+     * @return     if logging is enabled can returns info log using Log4j, otherwise returns logging output
      */
     protected void info(Wiki wiki, String s) {
-        if (enabled)
-            log(wiki, s, "INFO", CC.GREEN);
-        else
-            logger.info(wiki + " - " + s);
+        if (isLoggingEnabled) {
+            if (useLog4j)
+                logger.info(wiki + " - " + s);
+            else
+                log(wiki, s, "INFO", CC.GREEN);
+        }
     }
 
     /**
@@ -109,13 +113,15 @@ class ColorLog {
      *
      * @param wiki The wiki object to use
      * @param s    The String to print.
-     * @return normal log if enabled==true, otherwise returns error log using Log4j
+     * @return     If logging is enabled can returns error log using Log4j, otherwise returns logging output
      */
     protected void error(Wiki wiki, String s) {
-        if (enabled)
-            log(wiki, s, "ERROR", CC.RED);
-        else
-            logger.error(wiki + " - " + s);
+        if (isLoggingEnabled) {
+            if (useLog4j)
+                logger.error(wiki + " - " + s);
+            else
+                log(wiki, s, "ERROR", CC.RED);
+        }
     }
 
     /**
@@ -123,13 +129,15 @@ class ColorLog {
      *
      * @param wiki The wiki object to use
      * @param s    The String to print.
-     * @return normal log if enabled==true, otherwise returns debug log using Log4j
+     * @return     If logging is enabled can returns debug log using Log4j, otherwise returns logging output
      */
     protected void debug(Wiki wiki, String s) {
-        if (enabled)
-            log(wiki, s, "DEBUG", CC.PURPLE);
-        else
-            logger.debug(wiki + " - " + s);
+        if (isLoggingEnabled) {
+            if (useLog4j)
+                logger.debug(wiki + " - " + s);
+            else
+                log(wiki, s, "DEBUG", CC.PURPLE);
+        }
     }
 
     /**
@@ -137,13 +145,14 @@ class ColorLog {
      *
      * @param wiki The wiki object to use
      * @param s    The String to print.
-     * @return normal log if enabled==true, otherwise returns trace log using Log4j
+     * @return     If logging is enabled can returns fyi log using Log4j, otherwise returns logging output
      */
     protected void fyi(Wiki wiki, String s) {
-        if (enabled)
-            log(wiki, s, "FYI", CC.CYAN);
-        else {
-            logger.log(fyiLogLevel, "s");
+        if (isLoggingEnabled) {
+            if (useLog4j)
+                logger.log(fyiLogLevel, "s");
+            else
+                log(wiki, s, "FYI", CC.CYAN);
         }
     }
 

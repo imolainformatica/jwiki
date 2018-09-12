@@ -315,7 +315,7 @@ public class Wiki
 	 */
 	public void enableLogging(boolean enabled)
 	{
-		conf.log.enabled = enabled;
+		conf.log.isLoggingEnabled = enabled;
 	}
 
 	/**
@@ -364,7 +364,7 @@ public class Wiki
 		try
 		{
 			return wl.containsKey(domain) ? wl.get(domain)
-					: new Wiki(null, null, conf.baseURL.newBuilder().host(domain).build(), null, null, this, conf.log.enabled);
+					: new Wiki(null, null, conf.baseURL.newBuilder().host(domain).build(), null, null, this, conf.log.isLoggingEnabled);
 		}
 		catch (Throwable e)
 		{
