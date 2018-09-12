@@ -50,7 +50,6 @@ class ColorLog {
         useLog4j = false;
     }
 
-
     /**
      * Constructor, create a new ColorLog with possibility to use Log4j
      * @param enableLogging Set true to allow this ColorLog to print log output
