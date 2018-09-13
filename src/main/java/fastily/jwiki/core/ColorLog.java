@@ -1,6 +1,5 @@
 package fastily.jwiki.core;
 
-import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -15,6 +14,11 @@ import java.time.format.DateTimeFormatter;
  */
 class ColorLog {
     /**
+     * Properties system, IF DEFINED, logging on standard error; otherwise logging with Log4j
+     */
+    private static final String COLORLOGPROP = "ColorLogOldMode";
+
+    /**
      * The date formatter prefixing output.
      */
     private static final DateTimeFormatter df = DateTimeFormatter.ofPattern("MMM dd, yyyy hh:mm:ss a");
@@ -22,12 +26,7 @@ class ColorLog {
     /**
      * Creating logger
      */
-    private static Logger logger = LogManager.getLogger(ColorLog.class);
-
-    /**
-     * Creating a custom log4j level: FYI
-     */
-    final Level fyiLogLevel = Level.forName("FYI", 1);
+    protected static Logger logger = LogManager.getLogger(ColorLog.class);
 
     /**
      * Flag indicating whether logging with this object is allowed.
@@ -40,24 +39,21 @@ class ColorLog {
     private boolean useLog4j;
 
     /**
-     * Constructor, creates a new ColorLog, disabling logging with Log4j
+     * Constructor, creates a new ColorLog
      *
      * @param enableLogging Set true to allow this ColorLog to print log output
      */
     protected ColorLog(boolean enableLogging)
     {
         isLoggingEnabled = enableLogging;
-        useLog4j = false;
-    }
 
-    /**
-     * Constructor, create a new ColorLog with possibility to use Log4j
-     * @param enableLogging Set true to allow this ColorLog to print log output
-     * @param useLog4j      Set true to use logging with Log4j
-     */
-    protected ColorLog(boolean enableLogging, boolean useLog4j) {
-        this.useLog4j = useLog4j;
-        isLoggingEnabled = enableLogging;
+        //If System property is defined, logging output will be used
+        if (System.getProperty(COLORLOGPROP) != null )
+        {
+            useLog4j = false;
+        }
+        else    //True to use Log4j logging
+            useLog4j = true;
     }
 
 
@@ -135,7 +131,7 @@ class ColorLog {
             if (useLog4j)
                 logger.debug(wiki + " - " + s);
             else
-                log(wiki, s, "DEBUG", CC.PURPLE);
+                 log(wiki, s, "DEBUG", CC.PURPLE);
         }
     }
 
@@ -149,7 +145,7 @@ class ColorLog {
     protected void fyi(Wiki wiki, String s) {
         if (isLoggingEnabled) {
             if (useLog4j)
-                logger.log(fyiLogLevel, "s");
+                logger.trace(wiki + " - " + s);
             else
                 log(wiki, s, "FYI", CC.CYAN);
         }

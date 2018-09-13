@@ -11,7 +11,6 @@ import org.apache.logging.log4j.core.config.LoggerConfig;
 import org.apache.logging.log4j.core.layout.PatternLayout;
 import org.junit.After;
 import org.junit.BeforeClass;
-import org.junit.Test;
 
 import java.io.StringWriter;
 
@@ -45,16 +44,6 @@ public class ColorLogTests_bkp {
         ctx.updateLoggers();
     }
 
-    @Test
-    public void TestProva () {
-        setLoggerLevel();
-
-        ColorLog colorLog = new ColorLog(true,true);
-
-        Wiki wiki = new Wiki ("test.wikipedia.org");
-        colorLog.info(wiki,"info log message");
-        String result = stringWriter.toString();
-    }
 
     @After
     public void cleanStringWriter() {
