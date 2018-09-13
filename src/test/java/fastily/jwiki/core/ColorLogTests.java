@@ -241,19 +241,19 @@ public class ColorLogTests {
         Configurator.setLevel(LogManager.getLogger(ColorLog.class).getName(), Level.ALL);
 
 
-        colorLog.fyi(wiki,"Test trace message");
+        colorLog.fyi(wiki,fyi_msg);
         Assert.assertTrue(readFileFindString(filePath, fyi_msg));
 
-        colorLog.debug(wiki,"Test debug message");
+        colorLog.debug(wiki,debug_msg);
         Assert.assertTrue(readFileFindString(filePath, debug_msg));
 
-        colorLog.info(wiki,"Test info message");
+        colorLog.info(wiki,info_msg);
         Assert.assertTrue(readFileFindString(filePath, info_msg));
 
-        colorLog.warn(wiki,"Test warn message");
+        colorLog.warn(wiki,warn_msg);
         Assert.assertTrue(readFileFindString(filePath, warn_msg));
 
-        colorLog.error(wiki,"Test error message");
+        colorLog.error(wiki,error_msg);
         Assert.assertTrue(readFileFindString(filePath, error_msg));
     }
 
