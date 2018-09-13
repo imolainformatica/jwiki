@@ -26,7 +26,7 @@ class ColorLog {
     /**
      * Creating logger
      */
-    protected static Logger logger = LogManager.getLogger(ColorLog.class);
+    private static Logger logger = LogManager.getLogger(ColorLog.class);
 
     /**
      * Flag indicating whether logging with this object is allowed.

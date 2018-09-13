@@ -75,7 +75,7 @@ public class ColorLogTests {
     public void testLvlTrace() throws IOException {
         boolean isStringFound;
 
-        Configurator.setLevel(colorLog.logger.getName(), Level.TRACE);
+        Configurator.setLevel(LogManager.getLogger(ColorLog.class).getName(), Level.TRACE);
 
 
         colorLog.fyi(wiki,fyi_msg);
@@ -97,7 +97,7 @@ public class ColorLogTests {
     @Test
     public void testLvlDebug() throws IOException {
         boolean isStringFound;
-        Configurator.setLevel(colorLog.logger.getName(), Level.DEBUG);
+        Configurator.setLevel(LogManager.getLogger(ColorLog.class).getName(), Level.DEBUG);
 
 
         colorLog.fyi(wiki,fyi_msg);
@@ -120,7 +120,7 @@ public class ColorLogTests {
     @Test
     public void testLvlInfo() throws IOException {
         boolean isStringFound;
-        Configurator.setLevel(colorLog.logger.getName(), Level.INFO);
+        Configurator.setLevel(LogManager.getLogger(ColorLog.class).getName(), Level.INFO);
 
 
         colorLog.fyi(wiki,fyi_msg);
@@ -144,7 +144,7 @@ public class ColorLogTests {
     @Test
     public void testLvlWarn() throws IOException {
         boolean isStringFound;
-        Configurator.setLevel(colorLog.logger.getName(), Level.WARN);
+        Configurator.setLevel(LogManager.getLogger(ColorLog.class).getName(), Level.WARN);
 
 
         colorLog.fyi(wiki,fyi_msg);
@@ -166,7 +166,7 @@ public class ColorLogTests {
     @Test
     public void testLvlError() throws IOException {
         boolean isStringFound;
-        Configurator.setLevel(colorLog.logger.getName(), Level.ERROR);
+        Configurator.setLevel(LogManager.getLogger(ColorLog.class).getName(), Level.ERROR);
 
 
         colorLog.fyi(wiki,fyi_msg);
@@ -188,7 +188,7 @@ public class ColorLogTests {
 
     public void testLvlFatal() throws IOException {
         boolean isStringFound;
-        Configurator.setLevel(colorLog.logger.getName(), Level.FATAL);
+        Configurator.setLevel(LogManager.getLogger(ColorLog.class).getName(), Level.FATAL);
 
 
         colorLog.fyi(wiki,fyi_msg);
@@ -210,7 +210,7 @@ public class ColorLogTests {
 
     public void testLvlAll() throws IOException {
         boolean isStringFound;
-        Configurator.setLevel(colorLog.logger.getName(), Level.ALL);
+        Configurator.setLevel(LogManager.getLogger(ColorLog.class).getName(), Level.ALL);
 
 
         colorLog.fyi(wiki,"Test trace message");
