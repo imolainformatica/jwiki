@@ -20,10 +20,14 @@ public class ColorLogTests {
     private final static ColorLog colorLog = new ColorLog(true);
     private final Wiki wiki = new Wiki ("test.wikipedia.org");
     static Logger logger = LogManager.getLogger(ColorLogTests.class);
-    String filePath = "C:\\Users\\ADMIN\\Documents\\Primo lancio SEMI\\jwiki\\ColorLogTest.log";
 
     /**
-     *Read a file line by line and looks for stringToFind. If not found, exit
+     * File where to log logging messages
+     */
+    String filePath = "ColorLogTest.log";
+
+    /**
+     *Read a file line by line and looks for stringToFind. If not found, return false and exit
      * @param stringToFind String we want to search
      */
     public static boolean readFileFindString(String filePath, String stringToFind) throws IOException {
@@ -47,6 +51,9 @@ public class ColorLogTests {
          return false;
     }
 
+    /**
+     * Message for each level
+     */
     String fyi_msg;
     String debug_msg;
     String info_msg;
@@ -68,7 +75,7 @@ public class ColorLogTests {
     }
 
     /**
-     * Method to test which log levels will log in the file .log
+     * Method to test which log levels will log in the file .log, with TRACE lvl setted.
      *
      */
     @Test
@@ -117,6 +124,11 @@ public class ColorLogTests {
 
     }
 
+
+    /**
+     * Method to test which log levels will log in the file .log, with INFO lvl setted.
+     *
+     */
     @Test
     public void testLvlInfo() throws IOException {
         boolean isStringFound;
@@ -140,7 +152,10 @@ public class ColorLogTests {
 
     }
 
-
+    /**
+     * Method to test which log levels will log in the file .log, with WARN lvl setted.
+     *
+     */
     @Test
     public void testLvlWarn() throws IOException {
         boolean isStringFound;
@@ -163,6 +178,11 @@ public class ColorLogTests {
         Assert.assertTrue(readFileFindString(filePath, error_msg));
     }
 
+
+    /**
+     * Method to test which log levels will log in the file .log, with ERROR lvl setted.
+     *
+     */
     @Test
     public void testLvlError() throws IOException {
         boolean isStringFound;
@@ -186,6 +206,10 @@ public class ColorLogTests {
     }
 
 
+    /**
+     * Method to test which log levels will log in the file .log, with FATAL lvl setted.
+     *
+     */
     public void testLvlFatal() throws IOException {
         boolean isStringFound;
         Configurator.setLevel(LogManager.getLogger(ColorLog.class).getName(), Level.FATAL);
@@ -208,25 +232,29 @@ public class ColorLogTests {
     }
 
 
+    /**
+     * Method to test which log levels will log in the file .log, with ALL lvl setted.
+     *
+     */
     public void testLvlAll() throws IOException {
         boolean isStringFound;
         Configurator.setLevel(LogManager.getLogger(ColorLog.class).getName(), Level.ALL);
 
 
         colorLog.fyi(wiki,"Test trace message");
-        Assert.assertTrue(readFileFindString(filePath, "trace"));
+        Assert.assertTrue(readFileFindString(filePath, fyi_msg));
 
         colorLog.debug(wiki,"Test debug message");
-        Assert.assertTrue(readFileFindString(filePath, "debug"));
+        Assert.assertTrue(readFileFindString(filePath, debug_msg));
 
         colorLog.info(wiki,"Test info message");
-        Assert.assertTrue(readFileFindString(filePath, "info"));
+        Assert.assertTrue(readFileFindString(filePath, info_msg));
 
         colorLog.warn(wiki,"Test warn message");
-        Assert.assertTrue(readFileFindString(filePath, "warn"));
+        Assert.assertTrue(readFileFindString(filePath, warn_msg));
 
         colorLog.error(wiki,"Test error message");
-        Assert.assertTrue(readFileFindString(filePath, "error"));
+        Assert.assertTrue(readFileFindString(filePath, error_msg));
     }
 
 
