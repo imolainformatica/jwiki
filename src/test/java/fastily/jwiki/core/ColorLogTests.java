@@ -74,52 +74,63 @@ public class ColorLogTests {
         error_msg = simpleTestName + "_" + "error";
     }
 
+
+    /**
+     * Log messages with every logging lvl
+     */
+    private void logMsg()
+    {
+        colorLog.fyi(wiki,fyi_msg);
+        colorLog.debug(wiki,debug_msg);
+        colorLog.info(wiki,info_msg);
+        colorLog.warn(wiki,warn_msg);
+        colorLog.error(wiki,error_msg);
+    }
+
+
     /**
      * Method to test which log levels will log in the file .log, with TRACE lvl setted.
      *
      */
     @Test
     public void testLvlTrace() throws IOException {
-        boolean isStringFound;
-
         Configurator.setLevel(LogManager.getLogger(ColorLog.class).getName(), Level.TRACE);
 
 
-        colorLog.fyi(wiki,fyi_msg);
+        logMsg();
         Assert.assertTrue(readFileFindString(filePath, fyi_msg));
 
-        colorLog.debug(wiki,debug_msg);
+        logMsg();
         Assert.assertTrue(readFileFindString(filePath, debug_msg));
 
-        colorLog.info(wiki,info_msg);
+        logMsg();
         Assert.assertTrue(readFileFindString(filePath, info_msg));
 
-        colorLog.warn(wiki,warn_msg);
+        logMsg();
         Assert.assertTrue(readFileFindString(filePath, warn_msg));
 
-        colorLog.error(wiki,error_msg);
+        logMsg();
         Assert.assertTrue(readFileFindString(filePath, error_msg));
     }
 
     @Test
     public void testLvlDebug() throws IOException {
-        boolean isStringFound;
         Configurator.setLevel(LogManager.getLogger(ColorLog.class).getName(), Level.DEBUG);
 
 
-        colorLog.fyi(wiki,fyi_msg);
+        logMsg();
         Assert.assertFalse(readFileFindString(filePath, fyi_msg));
 
-        colorLog.debug(wiki,debug_msg);
+        logMsg();
         Assert.assertTrue(readFileFindString(filePath, debug_msg));
 
-        colorLog.info(wiki,info_msg);
+        logMsg();
         Assert.assertTrue(readFileFindString(filePath, info_msg));
 
-        colorLog.warn(wiki,warn_msg);
+        logMsg();
         Assert.assertTrue(readFileFindString(filePath, warn_msg));
 
-        colorLog.error(wiki,error_msg);
+        logMsg();
         Assert.assertTrue(readFileFindString(filePath, error_msg));
 
     }
@@ -131,23 +142,22 @@ public class ColorLogTests {
      */
     @Test
     public void testLvlInfo() throws IOException {
-        boolean isStringFound;
         Configurator.setLevel(LogManager.getLogger(ColorLog.class).getName(), Level.INFO);
 
 
-        colorLog.fyi(wiki,fyi_msg);
+        logMsg();
         Assert.assertFalse(readFileFindString(filePath, fyi_msg));
 
-        colorLog.debug(wiki,debug_msg);
+        logMsg();
         Assert.assertFalse(readFileFindString(filePath, debug_msg));
 
-        colorLog.info(wiki,info_msg);
+        logMsg();
         Assert.assertTrue(readFileFindString(filePath, info_msg));
 
-        colorLog.warn(wiki,warn_msg);
+        logMsg();
         Assert.assertTrue(readFileFindString(filePath, warn_msg));
 
-        colorLog.error(wiki,error_msg);
+        logMsg();
         Assert.assertTrue(readFileFindString(filePath, error_msg));
 
     }
@@ -158,23 +168,22 @@ public class ColorLogTests {
      */
     @Test
     public void testLvlWarn() throws IOException {
-        boolean isStringFound;
         Configurator.setLevel(LogManager.getLogger(ColorLog.class).getName(), Level.WARN);
 
 
-        colorLog.fyi(wiki,fyi_msg);
+        logMsg();
         Assert.assertFalse(readFileFindString(filePath, fyi_msg));
 
-        colorLog.debug(wiki,debug_msg);
+        logMsg();
         Assert.assertFalse(readFileFindString(filePath, debug_msg));
 
-        colorLog.info(wiki,info_msg);
+        logMsg();
         Assert.assertFalse(readFileFindString(filePath, info_msg));
 
-        colorLog.warn(wiki,warn_msg);
+        logMsg();
         Assert.assertTrue(readFileFindString(filePath, warn_msg));
 
-        colorLog.error(wiki,error_msg);
+        logMsg();
         Assert.assertTrue(readFileFindString(filePath, error_msg));
     }
 
@@ -185,23 +194,22 @@ public class ColorLogTests {
      */
     @Test
     public void testLvlError() throws IOException {
-        boolean isStringFound;
         Configurator.setLevel(LogManager.getLogger(ColorLog.class).getName(), Level.ERROR);
 
 
-        colorLog.fyi(wiki,fyi_msg);
+        logMsg();
         Assert.assertFalse(readFileFindString(filePath, fyi_msg));
 
-        colorLog.debug(wiki,debug_msg);
+        logMsg();
         Assert.assertFalse(readFileFindString(filePath, debug_msg));
 
-        colorLog.info(wiki,info_msg);
+        logMsg();
         Assert.assertFalse(readFileFindString(filePath, info_msg));
 
-        colorLog.warn(wiki,warn_msg);
+        logMsg();
         Assert.assertFalse(readFileFindString(filePath, warn_msg));
 
-        colorLog.error(wiki,error_msg);
+        logMsg();
         Assert.assertTrue(readFileFindString(filePath, error_msg));
     }
 
@@ -211,23 +219,22 @@ public class ColorLogTests {
      *
      */
     public void testLvlFatal() throws IOException {
-        boolean isStringFound;
         Configurator.setLevel(LogManager.getLogger(ColorLog.class).getName(), Level.FATAL);
 
 
-        colorLog.fyi(wiki,fyi_msg);
+        logMsg();
         Assert.assertFalse(readFileFindString(filePath, fyi_msg));
 
-        colorLog.debug(wiki,debug_msg);
+        logMsg();
         Assert.assertFalse(readFileFindString(filePath, debug_msg));
 
-        colorLog.info(wiki,info_msg);
+        logMsg();
         Assert.assertFalse(readFileFindString(filePath, info_msg));
 
-        colorLog.warn(wiki,warn_msg);
+        logMsg();
         Assert.assertFalse(readFileFindString(filePath, warn_msg));
 
-        colorLog.error(wiki,error_msg);
+        logMsg();
         Assert.assertTrue(readFileFindString(filePath, error_msg));
     }
 
@@ -237,29 +244,24 @@ public class ColorLogTests {
      *
      */
     public void testLvlAll() throws IOException {
-        boolean isStringFound;
         Configurator.setLevel(LogManager.getLogger(ColorLog.class).getName(), Level.ALL);
 
 
-        colorLog.fyi(wiki,fyi_msg);
+        logMsg();
         Assert.assertTrue(readFileFindString(filePath, fyi_msg));
 
-        colorLog.debug(wiki,debug_msg);
+        logMsg();
         Assert.assertTrue(readFileFindString(filePath, debug_msg));
 
-        colorLog.info(wiki,info_msg);
+        logMsg();
         Assert.assertTrue(readFileFindString(filePath, info_msg));
 
-        colorLog.warn(wiki,warn_msg);
+        logMsg();
         Assert.assertTrue(readFileFindString(filePath, warn_msg));
 
-        colorLog.error(wiki,error_msg);
+        logMsg();
         Assert.assertTrue(readFileFindString(filePath, error_msg));
     }
 
 
-
-
-
-
-    }
+}
