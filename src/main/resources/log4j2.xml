@@ -14,7 +14,7 @@
     </Appenders>
 
     <Loggers>
-        <Logger name="fastily.jwiki.core.ColorLog" level="TRACE" additivity="false">
+        <Logger name="fastily.jwiki.core.ColorLog" level="INFO" additivity="false">
             <AppenderRef ref="ColorLogAppender"/>
         </Logger>
 

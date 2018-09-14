@@ -54,7 +54,7 @@ class ColorLog {
         }
         else    //True to use Log4j logging
             useLog4j = true;
-    }
+}
 
 
     /**

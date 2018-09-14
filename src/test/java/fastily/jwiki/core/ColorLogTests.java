@@ -4,7 +4,6 @@ import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.core.config.Configurator;
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
@@ -13,6 +12,11 @@ import org.junit.rules.TestName;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
+
 
 
 public class ColorLogTests {
@@ -67,6 +71,7 @@ public class ColorLogTests {
     @Before
     public void setLogMsg () {
         String simpleTestName = testName.getMethodName();
+
         fyi_msg = simpleTestName + "_" + "fyi";
         debug_msg =  simpleTestName+ "_" + "debug";
         info_msg = simpleTestName + "_" + "info";
@@ -98,19 +103,19 @@ public class ColorLogTests {
 
 
         logMsg();
-        Assert.assertTrue(readFileFindString(filePath, fyi_msg));
+        assertTrue(readFileFindString(filePath, fyi_msg));
 
         logMsg();
-        Assert.assertTrue(readFileFindString(filePath, debug_msg));
+        assertTrue(readFileFindString(filePath, debug_msg));
 
         logMsg();
-        Assert.assertTrue(readFileFindString(filePath, info_msg));
+        assertTrue(readFileFindString(filePath, info_msg));
 
         logMsg();
-        Assert.assertTrue(readFileFindString(filePath, warn_msg));
+        assertTrue(readFileFindString(filePath, warn_msg));
 
         logMsg();
-        Assert.assertTrue(readFileFindString(filePath, error_msg));
+        assertTrue(readFileFindString(filePath, error_msg));
     }
 
     @Test
@@ -119,26 +124,26 @@ public class ColorLogTests {
 
 
         logMsg();
-        Assert.assertFalse(readFileFindString(filePath, fyi_msg));
+        assertFalse(readFileFindString(filePath, fyi_msg));
 
         logMsg();
-        Assert.assertTrue(readFileFindString(filePath, debug_msg));
+        assertTrue(readFileFindString(filePath, debug_msg));
 
         logMsg();
-        Assert.assertTrue(readFileFindString(filePath, info_msg));
+        assertTrue(readFileFindString(filePath, info_msg));
 
         logMsg();
-        Assert.assertTrue(readFileFindString(filePath, warn_msg));
+        assertTrue(readFileFindString(filePath, warn_msg));
 
         logMsg();
-        Assert.assertTrue(readFileFindString(filePath, error_msg));
+        assertTrue(readFileFindString(filePath, error_msg));
 
     }
 
 
     /**
-     * Method to test which log levels will log in the file .log, with INFO lvl setted.
-     *
+     * Method to test which log levels will log in the file .log, wit INFO lvl setted.
+     *      *h
      */
     @Test
     public void testLvlInfo() throws IOException {
@@ -146,19 +151,19 @@ public class ColorLogTests {
 
 
         logMsg();
-        Assert.assertFalse(readFileFindString(filePath, fyi_msg));
+        assertFalse(readFileFindString(filePath, fyi_msg));
 
         logMsg();
-        Assert.assertFalse(readFileFindString(filePath, debug_msg));
+        assertFalse(readFileFindString(filePath, debug_msg));
 
         logMsg();
-        Assert.assertTrue(readFileFindString(filePath, info_msg));
+        assertTrue(readFileFindString(filePath, info_msg));
 
         logMsg();
-        Assert.assertTrue(readFileFindString(filePath, warn_msg));
+        assertTrue(readFileFindString(filePath, warn_msg));
 
         logMsg();
-        Assert.assertTrue(readFileFindString(filePath, error_msg));
+        assertTrue(readFileFindString(filePath, error_msg));
 
     }
 
@@ -172,19 +177,19 @@ public class ColorLogTests {
 
 
         logMsg();
-        Assert.assertFalse(readFileFindString(filePath, fyi_msg));
+        assertFalse(readFileFindString(filePath, fyi_msg));
 
         logMsg();
-        Assert.assertFalse(readFileFindString(filePath, debug_msg));
+        assertFalse(readFileFindString(filePath, debug_msg));
 
         logMsg();
-        Assert.assertFalse(readFileFindString(filePath, info_msg));
+        assertFalse(readFileFindString(filePath, info_msg));
 
         logMsg();
-        Assert.assertTrue(readFileFindString(filePath, warn_msg));
+        assertTrue(readFileFindString(filePath, warn_msg));
 
         logMsg();
-        Assert.assertTrue(readFileFindString(filePath, error_msg));
+        assertTrue(readFileFindString(filePath, error_msg));
     }
 
 
@@ -198,19 +203,19 @@ public class ColorLogTests {
 
 
         logMsg();
-        Assert.assertFalse(readFileFindString(filePath, fyi_msg));
+        assertFalse(readFileFindString(filePath, fyi_msg));
 
         logMsg();
-        Assert.assertFalse(readFileFindString(filePath, debug_msg));
+        assertFalse(readFileFindString(filePath, debug_msg));
 
         logMsg();
-        Assert.assertFalse(readFileFindString(filePath, info_msg));
+        assertFalse(readFileFindString(filePath, info_msg));
 
         logMsg();
-        Assert.assertFalse(readFileFindString(filePath, warn_msg));
+        assertFalse(readFileFindString(filePath, warn_msg));
 
         logMsg();
-        Assert.assertTrue(readFileFindString(filePath, error_msg));
+        assertTrue(readFileFindString(filePath, error_msg));
     }
 
 
@@ -223,19 +228,19 @@ public class ColorLogTests {
 
 
         logMsg();
-        Assert.assertFalse(readFileFindString(filePath, fyi_msg));
+        assertFalse(readFileFindString(filePath, fyi_msg));
 
         logMsg();
-        Assert.assertFalse(readFileFindString(filePath, debug_msg));
+        assertFalse(readFileFindString(filePath, debug_msg));
 
         logMsg();
-        Assert.assertFalse(readFileFindString(filePath, info_msg));
+        assertFalse(readFileFindString(filePath, info_msg));
 
         logMsg();
-        Assert.assertFalse(readFileFindString(filePath, warn_msg));
+        assertFalse(readFileFindString(filePath, warn_msg));
 
         logMsg();
-        Assert.assertTrue(readFileFindString(filePath, error_msg));
+        assertTrue(readFileFindString(filePath, error_msg));
     }
 
 
@@ -248,20 +253,18 @@ public class ColorLogTests {
 
 
         logMsg();
-        Assert.assertTrue(readFileFindString(filePath, fyi_msg));
+        assertTrue(readFileFindString(filePath, fyi_msg));
 
         logMsg();
-        Assert.assertTrue(readFileFindString(filePath, debug_msg));
+        assertTrue(readFileFindString(filePath, debug_msg));
 
         logMsg();
-        Assert.assertTrue(readFileFindString(filePath, info_msg));
+        assertTrue(readFileFindString(filePath, info_msg));
 
         logMsg();
-        Assert.assertTrue(readFileFindString(filePath, warn_msg));
+        assertTrue(readFileFindString(filePath, warn_msg));
 
         logMsg();
-        Assert.assertTrue(readFileFindString(filePath, error_msg));
+        assertTrue(readFileFindString(filePath, error_msg));
     }
-
-
 }
