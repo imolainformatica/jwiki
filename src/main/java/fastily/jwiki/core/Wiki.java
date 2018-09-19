@@ -17,7 +17,7 @@ import java.util.regex.Matcher;
 
 /**
  * Main entry point of the jwiki API. This class contains most queries/actions which jwiki can perform on a wiki. Unless
- * stated otherwise, all methods are thread-saf.e
+ * stated otherwise, all methods are thread-safe
  * 
  * @author Fastily
  */

@@ -1,7 +1,8 @@
 package fastily.jwiki.core;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -26,7 +27,8 @@ class ColorLog {
     /**
      * Creating logger
      */
-    private static Logger logger = LogManager.getLogger(ColorLog.class);
+    private static final Log LOGGER = LogFactory.getLog(ColorLog.class);
+
 
     /**
      * Flag indicating whether logging with this object is allowed.
@@ -34,9 +36,9 @@ class ColorLog {
     protected boolean isLoggingEnabled;
 
     /**
-     * Flag to use Log4j
+     * Flag to log
      */
-    private boolean useLog4j;
+    private boolean useLog;
 
     /**
      * Constructor, creates a new ColorLog
@@ -50,10 +52,10 @@ class ColorLog {
         //If System property is defined, logging output will be used
         if (System.getProperty(COLORLOGPROP) != null )
         {
-            useLog4j = false;
+            useLog = false;
         }
         else    //True to use Log4j logging
-            useLog4j = true;
+            useLog = true;
 }
 
 
@@ -80,8 +82,8 @@ class ColorLog {
      */
     protected void warn(Wiki wiki, String s) {
         if (isLoggingEnabled) {
-            if (useLog4j)
-                logger.warn(wiki + " - " + s);
+            if (useLog)
+                LOGGER.warn(wiki + " - " + s);
             else
                 log(wiki, s, "WARNING", CC.YELLOW);
         }
@@ -96,8 +98,8 @@ class ColorLog {
      */
     protected void info(Wiki wiki, String s) {
         if (isLoggingEnabled) {
-            if (useLog4j)
-                logger.info(wiki + " - " + s);
+            if (useLog)
+                LOGGER.info(wiki + " - " + s);
             else
                 log(wiki, s, "INFO", CC.GREEN);
         }
@@ -112,8 +114,8 @@ class ColorLog {
      */
     protected void error(Wiki wiki, String s) {
         if (isLoggingEnabled) {
-            if (useLog4j)
-                logger.error(wiki + " - " + s);
+            if (useLog)
+                LOGGER.error(wiki + " - " + s);
             else
                 log(wiki, s, "ERROR", CC.RED);
         }
@@ -128,8 +130,8 @@ class ColorLog {
      */
     protected void debug(Wiki wiki, String s) {
         if (isLoggingEnabled) {
-            if (useLog4j)
-                logger.debug(wiki + " - " + s);
+            if (useLog)
+                LOGGER.debug(wiki + " - " + s);
             else
                  log(wiki, s, "DEBUG", CC.PURPLE);
         }
@@ -144,8 +146,8 @@ class ColorLog {
      */
     protected void fyi(Wiki wiki, String s) {
         if (isLoggingEnabled) {
-            if (useLog4j)
-                logger.trace(wiki + " - " + s);
+            if (useLog)
+                LOGGER.trace(wiki + " - " + s);
             else
                 log(wiki, s, "FYI", CC.CYAN);
         }
@@ -212,3 +214,4 @@ class ColorLog {
         }
     }
 }
+
