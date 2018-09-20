@@ -2,8 +2,7 @@ package fastily.jwiki.core;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-/*import org.apache.commons.logging.impl.Log4JLogger;*/
-import org.apache.commons.logging.impl.Log4JLogger;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
@@ -12,13 +11,9 @@ import org.junit.rules.TestName;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-/*import java.util.logging.Level;*/
-/*import java.util.logging.LogManager;*/
 
-import static org.junit.jupiter.api.Assertions.assertFalse;
-import static org.junit.jupiter.api.Assertions.assertTrue;
-
-
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 
 public class ColorLogTests {
@@ -84,202 +79,31 @@ public class ColorLogTests {
     }
 
 
-
     /**
-     * Log messages with every logging lvl
+     * Method to test which log levels will log in the file .log, with TRACE lvl setted.
+     *
      */
-    private void logMsg()
-    {
+    @Test
+    public void testLogging() throws IOException {
+
+        assertTrue("You must set the logging level to INFO for this test, in log42j.xml, Logger=ColorLog", logger.isInfoEnabled());
+
         colorLog.fyi(wiki,fyi_msg);
         colorLog.debug(wiki,debug_msg);
         colorLog.info(wiki,info_msg);
         colorLog.warn(wiki,warn_msg);
         colorLog.error(wiki,error_msg);
+
+
+        assertFalse(readFileFindString(filePath, fyi_msg));
+
+        assertFalse(readFileFindString(filePath, debug_msg));
+
+        assertTrue(readFileFindString(filePath, info_msg));
+
+        assertTrue(readFileFindString(filePath, warn_msg));
+
+        assertTrue(readFileFindString(filePath, error_msg));
     }
 
-   /* public static void process(org.apache., String level) {
-        if (level != null) {
-            log.setLevel(org.apache.log4j.Level.toLevel(level));
-        }
-    }*/
-
-    /**
-     * Method to test which log levels will log in the file .log, with TRACE lvl setted.
-     *
-     */
-
-
-    /*@Test
-    public void testLvlTrace() throws IOException {
-        //Configurator.setLevel(LogManager.getLogger(ColorLog.class).getName(), Level.TRACE);
-        logger.getClass()
-        ((Log4JLogger) logger).getLogger()(org.apache.log4j.Level.DEBUG);
-
-
-        logMsg();
-        assertTrue(readFileFindString(filePath, fyi_msg));
-
-        logMsg();
-        assertTrue(readFileFindString(filePath, debug_msg));
-
-        logMsg();
-        assertTrue(readFileFindString(filePath, info_msg));
-
-        logMsg();
-        assertTrue(readFileFindString(filePath, warn_msg));
-
-        logMsg();
-        assertTrue(readFileFindString(filePath, error_msg));
-    }*/
-
-    /*@Test
-    public void testLvlDebug() throws IOException {
-        Configurator.setLevel(LogManager.getLogger(ColorLog.class).getName(), Level.DEBUG);
-
-
-        logMsg();
-        assertFalse(readFileFindString(filePath, fyi_msg));
-
-        logMsg();
-        assertTrue(readFileFindString(filePath, debug_msg));
-
-        logMsg();
-        assertTrue(readFileFindString(filePath, info_msg));
-
-        logMsg();
-        assertTrue(readFileFindString(filePath, warn_msg));
-
-        logMsg();
-        assertTrue(readFileFindString(filePath, error_msg));
-
-    }*/
-
-
-    /**
-     * Method to test which log levels will log in the file .log, wit INFO lvl setted.
-     *      *h
-     */
-
-    @Test
-    public void testLvlInfo() throws IOException { //perchè nella configurazione abbiamo INFO
-
-
-        logMsg();
-        assertFalse(readFileFindString(filePath, fyi_msg));
-
-        logMsg();
-        assertFalse(readFileFindString(filePath, debug_msg));
-
-        logMsg();
-        assertTrue(readFileFindString(filePath, info_msg));
-
-        logMsg();
-        assertTrue(readFileFindString(filePath, warn_msg));
-
-        logMsg();
-        assertTrue(readFileFindString(filePath, error_msg));
-
-    }
-
-    /**
-     * Method to test which log levels will log in the file .log, with WARN lvl setted.
-     *
-     */
-    /*@Test
-    public void testLvlWarn() throws IOException {
-        Configurator.setLevel(LogManager.getLogger(ColorLog.class).getName(), Level.WARN);
-        LogFactory.
-
-
-        logMsg();
-        assertFalse(readFileFindString(filePath, fyi_msg));
-
-        logMsg();
-        assertFalse(readFileFindString(filePath, debug_msg));
-
-        logMsg();
-        assertFalse(readFileFindString(filePath, info_msg));
-
-        logMsg();
-        assertTrue(readFileFindString(filePath, warn_msg));
-
-        logMsg();
-        assertTrue(readFileFindString(filePath, error_msg));
-    }*/
-
-
-    /**
-     * Method to test which log levels will log in the file .log, with ERROR lvl setted.
-     *
-     */
-   /* @Test
-    public void testLvlError() throws IOException {
-        Configurator.setLevel(LogManager.getLogger(ColorLog.class).getName(), Level.ERROR);
-
-
-        logMsg();
-        assertFalse(readFileFindString(filePath, fyi_msg));
-
-        logMsg();
-        assertFalse(readFileFindString(filePath, debug_msg));
-
-        logMsg();
-        assertFalse(readFileFindString(filePath, info_msg));
-
-        logMsg();
-        assertFalse(readFileFindString(filePath, warn_msg));
-
-        logMsg();
-        assertTrue(readFileFindString(filePath, error_msg));
-    }*/
-
-
-    /**
-     * Method to test which log levels will log in the file .log, with FATAL lvl setted.
-     *
-     */
-    /*public void testLvlFatal() throws IOException {
-        Configurator.setLevel(LogManager.getLogger(ColorLog.class).getName(), Level.FATAL);
-
-
-        logMsg();
-        assertFalse(readFileFindString(filePath, fyi_msg));
-
-        logMsg();
-        assertFalse(readFileFindString(filePath, debug_msg));
-
-        logMsg();
-        assertFalse(readFileFindString(filePath, info_msg));
-
-        logMsg();
-        assertFalse(readFileFindString(filePath, warn_msg));
-
-        logMsg();
-        as sertTrue(readFileFindString(filePath, error_msg));
-    }*/
-
-
-    /**
-     * Method to test which log levels will log in the file .log, with ALL lvl setted.
-     *
-     */
-    /*public void testLvlAll() throws IOException {
-        Configurator.setLevel(LogManager.getLogger(ColorLog.class).getName(), Level.ALL);
-
-
-        logMsg();
-        assertTrue(readFileFindString(filePath, fyi_msg));
-
-        logMsg();
-        assertTrue(readFileFindString(filePath, debug_msg));
-
-        logMsg();
-        assertTrue(readFileFindString(filePath, info_msg));
-
-        logMsg();
-        assertTrue(readFileFindString(filePath, warn_msg));
-
-        logMsg();
-        assertTrue(readFileFindString(filePath, error_msg));
-    }*/
 }
