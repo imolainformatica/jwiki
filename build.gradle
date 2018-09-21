@@ -22,7 +22,7 @@ dependencies {
     api "com.squareup.okhttp3:okhttp:3.11.0"
 
     compile group: 'commons-logging', name: 'commons-logging', version: '1.1.1'
-    compile 'org.apache.logging.log4j:log4j-1.2-api:2.11.1'
+
     
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.2.0'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.2.0'
@@ -82,6 +82,17 @@ task wgen(type: Jar) {
   with jar
 }
 
+apply plugin: 'maven'
+
+task createPom {
+    pom {
+        project {
+            groupId 'fastily'
+            artifactId 'jwiki'
+            version '1.6.1'
+        }
+    }.writeTo("jwiki-1.6.1.pom")
+}
 
 wrapper {
     gradleVersion = '4.10'

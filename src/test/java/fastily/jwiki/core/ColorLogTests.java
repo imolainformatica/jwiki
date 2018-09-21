@@ -2,7 +2,6 @@ package fastily.jwiki.core;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
@@ -31,7 +30,7 @@ public class ColorLogTests {
      *Read a file line by line and looks for stringToFind. If not found, return false and exit
      * @param stringToFind String we want to search
      */
-    public static boolean readFileFindString(String filePath, String stringToFind) throws IOException {
+    private boolean readFileFindString(String filePath, String stringToFind) throws IOException {
          String currentLine;
 
          try
@@ -46,7 +45,7 @@ public class ColorLogTests {
          }
          catch (IOException e)
          {
-             logger.error("File not found");
+             logger.error("File not found",e);
          }
 
          return false;
