@@ -1,11 +1,11 @@
 package fastily.jwiki.core;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.TestName;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -19,7 +19,7 @@ public class ColorLogTests {
 
     private final static ColorLog colorLog = new ColorLog(true);
     private final Wiki wiki = new Wiki ("test.wikipedia.org");
-    private static final Log logger = LogFactory.getLog(ColorLogTests.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(ColorLogTests.class);
 
     /**
      * File where to log logging messages
@@ -45,7 +45,7 @@ public class ColorLogTests {
          }
          catch (IOException e)
          {
-             logger.error("File not found",e);
+             LOGGER.error("File not found",e);
          }
 
          return false;
@@ -85,7 +85,7 @@ public class ColorLogTests {
     @Test
     public void testLogging() throws IOException {
 
-        assertTrue("You must set the logging level to INFO for this test, in log42j.xml, Logger=ColorLog", logger.isInfoEnabled());
+        assertTrue("You must set the logging level to INFO for this test, in log42j.xml, Logger=ColorLog", LOGGER.isInfoEnabled());
 
         colorLog.fyi(wiki,fyi_msg);
         colorLog.debug(wiki,debug_msg);
@@ -104,5 +104,4 @@ public class ColorLogTests {
 
         assertTrue(readFileFindString(filePath, error_msg));
     }
-
 }

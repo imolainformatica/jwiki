@@ -1,0 +1,17 @@
+<configuration>
+<!--ColorLog appender to file-->
+<appender name="COLOR_APPENDER" class="ch.qos.logback.core.FileAppender">
+   <file>ColorLogTest.log</file>
+        <level>INFO</level>
+   <append>false</append>
+   <encoder class="ch.qos.logback.core.encoder.LayoutWrappingEncoder">
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <pattern>%d{dd MMM yyyy HH:mm:ss,SSS} %-5p %M \(%c:%L\) %m%n</pattern>
+        </layout>
+   </encoder>
+
+</appender>
+    <root level="INFO">
+        <appender-ref ref="COLOR_APPENDER" />
+    </root>
+</configuration>

@@ -1,8 +1,8 @@
 package fastily.jwiki.core;
 
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -27,7 +27,7 @@ class ColorLog {
     /**
      * Creating logger
      */
-    private static final Log LOGGER = LogFactory.getLog(ColorLog.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(ColorLog.class);
 
 
     /**
@@ -54,7 +54,7 @@ class ColorLog {
         {
             useLog = false;
         }
-        else    //True to use Log4j logging
+        else    //True to use SLF4J logging
             useLog = true;
 }
 
@@ -78,7 +78,7 @@ class ColorLog {
      *
      * @param wiki The wiki object to use
      * @param s    The String to print.
-     * @return     If logging is enabled can returns warning log using Log4j, otherwise returns logging output
+     * @return     If logging is enabled can returns warning log using SLF4J, otherwise returns logging output
      */
     protected void warn(Wiki wiki, String s) {
         if (isLoggingEnabled) {
@@ -94,7 +94,7 @@ class ColorLog {
      *
      * @param wiki The wiki object to use
      * @param s    The String to print.
-     * @return     if logging is enabled can returns info log using Log4j, otherwise returns logging output
+     * @return     if logging is enabled can returns info log using SLF4J, otherwise returns logging output
      */
     protected void info(Wiki wiki, String s) {
         if (isLoggingEnabled) {
@@ -110,7 +110,7 @@ class ColorLog {
      *
      * @param wiki The wiki object to use
      * @param s    The String to print.
-     * @return     If logging is enabled can returns error log using Log4j, otherwise returns logging output
+     * @return     If logging is enabled can returns error log using SLF4J, otherwise returns logging output
      */
     protected void error(Wiki wiki, String s) {
         if (isLoggingEnabled) {
@@ -126,7 +126,7 @@ class ColorLog {
      *
      * @param wiki The wiki object to use
      * @param s    The String to print.
-     * @return     If logging is enabled can returns debug log using Log4j, otherwise returns logging output
+     * @return     If logging is enabled can returns debug log using SLF4J, otherwise returns logging output
      */
     protected void debug(Wiki wiki, String s) {
         if (isLoggingEnabled) {
@@ -142,7 +142,7 @@ class ColorLog {
      *
      * @param wiki The wiki object to use
      * @param s    The String to print.
-     * @return     If logging is enabled can returns fyi log using Log4j, otherwise returns logging output
+     * @return     If logging is enabled can returns fyi log using SLF4J, otherwise returns logging output
      */
     protected void fyi(Wiki wiki, String s) {
         if (isLoggingEnabled) {
