@@ -24,7 +24,7 @@ dependencies {
     compile group: 'org.slf4j', name: 'slf4j-api', version: '1.8.0-beta2'                           //SLF4J
 
     testRuntimeOnly group: 'ch.qos.logback', name: 'logback-core', version: '1.3.0-alpha4'          //logback core
-    testCompile group: 'ch.qos.logback', name: 'logback-classic', version: '1.3.0-alpha4'           //logback classic
+    testRuntimeOnly group: 'ch.qos.logback', name: 'logback-classic', version: '1.3.0-alpha4'           //logback classic
 
 
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.2.0'

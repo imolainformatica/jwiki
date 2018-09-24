@@ -1,4 +1,0 @@
-21 set 2018 13:54:50 INFO  info (fastily.jwiki.core.ColorLog:102) [<Anonymous> @ test.wikipedia.org] - Fetching Namespace List
-21 set 2018 13:54:50 INFO  info (fastily.jwiki.core.ColorLog:102) [<Anonymous> @ test.wikipedia.org] - testLogging_info
-21 set 2018 13:54:50 WARN  warn (fastily.jwiki.core.ColorLog:86) [<Anonymous> @ test.wikipedia.org] - testLogging_warn
-21 set 2018 13:54:50 ERROR error (fastily.jwiki.core.ColorLog:118) [<Anonymous> @ test.wikipedia.org] - testLogging_error
