@@ -1,0 +1,186 @@
+2018-10-24 09:47:12 [Test worker] INFO :: [<Anonymous> @ 127.0.0.1] - Fetching Namespace List
+2018-10-24 09:47:12 [Test worker] INFO :: [<Anonymous> @ 127.0.0.1] - Fetching Namespace List
+2018-10-24 09:47:13 [Test worker] INFO :: [<Anonymous> @ 127.0.0.1] - Adding text to Wikipedia:Sandbox
+2018-10-24 09:47:13 [Test worker] INFO :: [<Anonymous> @ 127.0.0.1] - Adding text to Wikipedia:Sandbox
+2018-10-24 09:47:13 [Test worker] INFO :: [<Anonymous> @ 127.0.0.1] - Fetching Namespace List
+2018-10-24 09:47:13 [Test worker] INFO :: [<Anonymous> @ 127.0.0.1] - Purging:[Foo, Test, Wikipedia:Sandbox]
+2018-10-24 09:47:13 [Test worker] INFO :: [<Anonymous> @ 127.0.0.1] - Fetching Namespace List
+2018-10-24 09:47:13 [Test worker] INFO :: [<Anonymous> @ 127.0.0.1] - Editing Wikipedia:Sandbox
+2018-10-24 09:47:13 [Test worker] INFO :: [<Anonymous> @ 127.0.0.1] - Fetching Namespace List
+2018-10-24 09:47:13 [Test worker] INFO :: [<Anonymous> @ 127.0.0.1] - Uploading D:\IMOLA_JWIKI\jwiki\build\resources\test\fastily\jwiki\test\uploadTestFile.svg
+2018-10-24 09:47:13 [Test worker] INFO :: [<Anonymous> @ 127.0.0.1] - Unstashing '25z4axfz2kf3.5wggly.30456209.svg' as 'TestSVG.svg'
+2018-10-24 09:47:13 [Test worker] INFO :: [<Anonymous> @ 127.0.0.1] - Try login for Test
+2018-10-24 09:47:13 [Test worker] INFO :: [Test @ 127.0.0.1] - Getting user rights for Test
+2018-10-24 09:47:13 [Test worker] INFO :: [Test @ 127.0.0.1] - Logged in as Test
+2018-10-24 09:47:13 [Test worker] INFO :: [Test @ 127.0.0.1] - Fetching Namespace List
+2018-10-24 09:47:13 [Test worker] INFO :: [Test @ 127.0.0.1] - Restoring Test
+2018-10-24 09:47:13 [Test worker] INFO :: [<Anonymous> @ 127.0.0.1] - Try login for Test
+2018-10-24 09:47:13 [Test worker] INFO :: [Test @ 127.0.0.1] - Getting user rights for Test
+2018-10-24 09:47:13 [Test worker] INFO :: [Test @ 127.0.0.1] - Logged in as Test
+2018-10-24 09:47:13 [Test worker] INFO :: [Test @ 127.0.0.1] - Fetching Namespace List
+2018-10-24 09:47:13 [Test worker] INFO :: [Test @ 127.0.0.1] - Deleting Test
+2018-10-24 09:47:13 [Test worker] INFO :: [<Anonymous> @ 127.0.0.1] - Try login for Test
+2018-10-24 09:47:13 [Test worker] INFO :: [Test @ 127.0.0.1] - Getting user rights for Test
+2018-10-24 09:47:13 [Test worker] INFO :: [Test @ 127.0.0.1] - Logged in as Test
+2018-10-24 09:47:13 [Test worker] INFO :: [Test @ 127.0.0.1] - Fetching Namespace List
+2018-10-24 09:47:13 [Test worker] INFO :: [<Anonymous> @ 127.0.0.1] - Fetching Namespace List
+2018-10-24 09:47:13 [Test worker] INFO :: [<Anonymous> @ 127.0.0.1] - Querying special page Deadendpages
+2018-10-24 09:47:13 [Test worker] INFO :: [<Anonymous> @ 127.0.0.1] - Fetching Namespace List
+2018-10-24 09:47:13 [Test worker] INFO :: [<Anonymous> @ 127.0.0.1] - Getting global usage for File:Example.jpg
+2018-10-24 09:47:13 [Test worker] INFO :: [<Anonymous> @ 127.0.0.1] - Fetching Namespace List
+2018-10-24 09:47:13 [Test worker] INFO :: [<Anonymous> @ 127.0.0.1] - Doing all pages fetch for all pages
+2018-10-24 09:47:13 [Test worker] INFO :: [<Anonymous> @ 127.0.0.1] - Fetching Namespace List
+2018-10-24 09:47:13 [Test worker] INFO :: [<Anonymous> @ 127.0.0.1] - Fetching log entries -> title: File:Example.jpg, user: Fastily, type: delete
+2018-10-24 09:47:13 [Test worker] INFO :: [<Anonymous> @ 127.0.0.1] - Fetching log entries -> title: Test, user: null, type: null
+2018-10-24 09:47:13 [Test worker] INFO :: [<Anonymous> @ 127.0.0.1] - Fetching Namespace List
+2018-10-24 09:47:13 [Test worker] INFO :: [<Anonymous> @ 127.0.0.1] - Querying recent changes
+2018-10-24 09:47:13 [Test worker] INFO :: [<Anonymous> @ 127.0.0.1] - Fetching Namespace List
+2018-10-24 09:47:13 [Test worker] INFO :: [<Anonymous> @ 127.0.0.1] - Fetching a list of protected titles
+2018-10-24 09:47:13 [Test worker] INFO :: [<Anonymous> @ 127.0.0.1] - Fetching Namespace List
+2018-10-24 09:47:13 [Test worker] INFO :: [<Anonymous> @ 127.0.0.1] - Fetching random page(s)
+2018-10-24 09:47:13 [Test worker] INFO :: [<Anonymous> @ test.wikipedia.org] - Fetching Namespace List
+2018-10-24 09:47:15 [Test worker] INFO :: [<Anonymous> @ test.wikipedia.org] - Fetching Namespace List
+2018-10-24 09:47:15 [Test worker] INFO :: [<Anonymous> @ test.wikipedia.org] - Getting page text of User:Fastily/Sandbox/HelloWorld
+2018-10-24 09:47:15 [Test worker] INFO :: [<Anonymous> @ test.wikipedia.org] - Getting page text of Category:Fastily Test
+2018-10-24 09:47:16 [Test worker] INFO :: [<Anonymous> @ test.wikipedia.org] - Getting page text of User:Fastily/NoPageHere
+2018-10-24 09:47:16 [Test worker] INFO :: [<Anonymous> @ test.wikipedia.org] - Getting categories of User:Fastily/Sandbox/Page/2
+2018-10-24 09:47:16 [Test worker] INFO :: [<Anonymous> @ test.wikipedia.org] - Getting duplicates of File:FastilyTest.svg
+2018-10-24 09:47:16 [Test worker] INFO :: [<Anonymous> @ test.wikipedia.org] - Getting links to User:Fastily/Sandbox/Link/1
+2018-10-24 09:47:16 [Test worker] INFO :: [<Anonymous> @ test.wikipedia.org] - Getting links to User:Fastily/Sandbox/Link/1
+2018-10-24 09:47:16 [Test worker] INFO :: [<Anonymous> @ test.wikipedia.org] - Getting user rights for Fastily
+2018-10-24 09:47:17 [Test worker] INFO :: [<Anonymous> @ test.wikipedia.org] - Fetching local file usage of File:FastilyTest.svg
+2018-10-24 09:47:17 [Test worker] INFO :: [<Anonymous> @ test.wikipedia.org] - Fetching local file usage of File:Fastily NonExistent File.png
+2018-10-24 09:47:17 [Test worker] INFO :: [<Anonymous> @ test.wikipedia.org] - Getting a text extract for User:Fastily/Sandbox/Article
+2018-10-24 09:47:17 [Test worker] INFO :: [<Anonymous> @ test.wikipedia.org] - Splitting User:Fastily/Sandbox/HelloWorld2 by header
+2018-10-24 09:47:17 [Test worker] INFO :: [<Anonymous> @ test.wikipedia.org] - Getting page text of User:Fastily/Sandbox/HelloWorld2
+2018-10-24 09:47:18 [Test worker] INFO :: [<Anonymous> @ test.wikipedia.org] - Splitting User:Fastily/Sandbox/HelloWorld by header
+2018-10-24 09:47:18 [Test worker] INFO :: [<Anonymous> @ test.wikipedia.org] - Getting page text of User:Fastily/Sandbox/HelloWorld
+2018-10-24 09:47:18 [Test worker] INFO :: [<Anonymous> @ test.wikipedia.org] - Splitting User:Fastily/Sandbox/Article by header
+2018-10-24 09:47:18 [Test worker] INFO :: [<Anonymous> @ test.wikipedia.org] - Getting page text of User:Fastily/Sandbox/Article
+2018-10-24 09:47:18 [Test worker] INFO :: [<Anonymous> @ test.wikipedia.org] - Doing all pages fetch for Fastily/Sandbox/Redirect
+2018-10-24 09:47:19 [Test worker] INFO :: [<Anonymous> @ test.wikipedia.org] - Getting image info for File:FastilyTestR.svg
+2018-10-24 09:47:19 [Test worker] INFO :: [<Anonymous> @ test.wikipedia.org] - Getting image info for File:FastilyTest.svg
+2018-10-24 09:47:19 [Test worker] INFO :: [<Anonymous> @ test.wikipedia.org] - Getting templates transcluded on User:Fastily/Sandbox/T
+2018-10-24 09:47:19 [Test worker] INFO :: [<Anonymous> @ test.wikipedia.org] - Doing prefix index search for Fastily/Sandbox/Page/
+2018-10-24 09:47:19 [Test worker] INFO :: [<Anonymous> @ test.wikipedia.org] - Doing all pages fetch for Fastily/Sandbox/Page/
+2018-10-24 09:47:19 [Test worker] INFO :: [<Anonymous> @ test.wikipedia.org] - Fetching contribs of FastilyClone
+2018-10-24 09:47:20 [Test worker] INFO :: [<Anonymous> @ test.wikipedia.org] - Fetching contribs of FastilyClone
+2018-10-24 09:47:20 [Test worker] INFO :: [<Anonymous> @ test.wikipedia.org] - Doing all pages fetch for Fastily/Sandbox/Page/
+2018-10-24 09:47:20 [Test worker] INFO :: [<Anonymous> @ test.wikipedia.org] - Checking to see if title exists: Main Page
+2018-10-24 09:47:20 [Test worker] INFO :: [<Anonymous> @ test.wikipedia.org] - Checking to see if title exists: User:Fastily/Sandbox
+2018-10-24 09:47:21 [Test worker] INFO :: [<Anonymous> @ test.wikipedia.org] - Checking to see if title exists: uSeR:fastily/Sandbox
+2018-10-24 09:47:21 [Test worker] INFO :: [<Anonymous> @ test.wikipedia.org] - Checking to see if title exists: User:Fastily/NoPageHere
+2018-10-24 09:47:21 [Test worker] INFO :: [<Anonymous> @ test.wikipedia.org] - Checking to see if title exists: user:fastily/noPageHere
+2018-10-24 09:47:21 [Test worker] INFO :: [<Anonymous> @ test.wikipedia.org] - Resolving redirect for User:Fastily/Sandbox/Redirect2
+2018-10-24 09:47:21 [Test worker] INFO :: [<Anonymous> @ test.wikipedia.org] - Resolving redirect for User:Fastily/Sandbox/Redirect3
+2018-10-24 09:47:22 [Test worker] INFO :: [<Anonymous> @ test.wikipedia.org] - Getting list of pages that transclude Template:FastilyTest
+2018-10-24 09:47:22 [Test worker] INFO :: [<Anonymous> @ test.wikipedia.org] - Getting list of pages that transclude Template:FastilyTest
+2018-10-24 09:47:22 [Test worker] INFO :: [<Anonymous> @ test.wikipedia.org] - Getting wiki links on User:Fastily/Sandbox/Page
+2018-10-24 09:47:22 [Test worker] INFO :: [<Anonymous> @ test.wikipedia.org] - Getting wiki links on User:Fastily/Sandbox/Page
+2018-10-24 09:47:22 [Test worker] INFO :: [<Anonymous> @ test.wikipedia.org] - Getting revisions from User:FastilyClone/Page/1
+2018-10-24 09:47:23 [Test worker] INFO :: [<Anonymous> @ test.wikipedia.org] - Getting revisions from User:FastilyClone/Page/1
+2018-10-24 09:47:23 [Test worker] INFO :: [<Anonymous> @ test.wikipedia.org] - Getting category members from Fastily Test2
+2018-10-24 09:47:23 [Test worker] INFO :: [<Anonymous> @ test.wikipedia.org] - Getting category members from Fastily Test2
+2018-10-24 09:47:23 [Test worker] INFO :: [<Anonymous> @ test.wikipedia.org] - Getting category members from Fastily Test
+2018-10-24 09:47:23 [Test worker] INFO :: [<Anonymous> @ test.wikipedia.org] - Getting files on User:Fastily/Sandbox/Page
+2018-10-24 09:47:24 [Test worker] INFO :: [<Anonymous> @ test.wikipedia.org] - Fetching uploads for FastilyClone
+2018-10-24 09:47:24 [Test worker] INFO :: [<Anonymous> @ test.wikipedia.org] - Getting category size of Category:Fastily Test
+2018-10-24 09:47:24 [Test worker] INFO :: [<Anonymous> @ test.wikipedia.org] - Getting category size of Category:Fastily Test2
+2018-10-24 09:47:24 [Test worker] INFO :: [<Anonymous> @ test.wikipedia.org] - Getting category size of Category:Does0Not0Exist6
+2018-10-24 09:47:24 [Test worker] INFO :: [<Anonymous> @ test.wikipedia.org] - Getting external links on User:Fastily/Sandbox/ExternalLink
+2018-10-24 09:47:25 [Test worker] INFO :: [<Anonymous> @ test.wikipedia.org] - Fetching Namespace List
+2018-10-24 09:47:25 [Test worker] INFO :: [<Anonymous> @ test.wikipedia.org] - Getting page text of User:Fastily/Sandbox/TPTest2
+2018-10-24 09:47:26 [Test worker] INFO :: [<Anonymous> @ test.wikipedia.org] - Getting page text of User:Fastily/Sandbox/TPTest3
+2018-10-24 10:01:51 [Test worker] INFO :: [<Anonymous> @ 127.0.0.1] - Fetching Namespace List
+2018-10-24 10:01:51 [Test worker] INFO :: [<Anonymous> @ 127.0.0.1] - Fetching Namespace List
+2018-10-24 10:01:51 [Test worker] INFO :: [<Anonymous> @ 127.0.0.1] - Adding text to Wikipedia:Sandbox
+2018-10-24 10:01:51 [Test worker] INFO :: [<Anonymous> @ 127.0.0.1] - Adding text to Wikipedia:Sandbox
+2018-10-24 10:01:51 [Test worker] INFO :: [<Anonymous> @ 127.0.0.1] - Fetching Namespace List
+2018-10-24 10:01:51 [Test worker] INFO :: [<Anonymous> @ 127.0.0.1] - Purging:[Foo, Test, Wikipedia:Sandbox]
+2018-10-24 10:01:51 [Test worker] INFO :: [<Anonymous> @ 127.0.0.1] - Fetching Namespace List
+2018-10-24 10:01:51 [Test worker] INFO :: [<Anonymous> @ 127.0.0.1] - Editing Wikipedia:Sandbox
+2018-10-24 10:01:51 [Test worker] INFO :: [<Anonymous> @ 127.0.0.1] - Fetching Namespace List
+2018-10-24 10:01:51 [Test worker] INFO :: [<Anonymous> @ 127.0.0.1] - Uploading D:\IMOLA_JWIKI\jwiki\build\resources\test\fastily\jwiki\test\uploadTestFile.svg
+2018-10-24 10:01:51 [Test worker] INFO :: [<Anonymous> @ 127.0.0.1] - Unstashing '25z4axfz2kf3.5wggly.30456209.svg' as 'TestSVG.svg'
+2018-10-24 10:01:51 [Test worker] INFO :: [<Anonymous> @ 127.0.0.1] - Try login for Test
+2018-10-24 10:01:51 [Test worker] INFO :: [Test @ 127.0.0.1] - Getting user rights for Test
+2018-10-24 10:01:51 [Test worker] INFO :: [Test @ 127.0.0.1] - Logged in as Test
+2018-10-24 10:01:51 [Test worker] INFO :: [Test @ 127.0.0.1] - Fetching Namespace List
+2018-10-24 10:01:51 [Test worker] INFO :: [Test @ 127.0.0.1] - Restoring Test
+2018-10-24 10:01:51 [Test worker] INFO :: [<Anonymous> @ 127.0.0.1] - Try login for Test
+2018-10-24 10:01:51 [Test worker] INFO :: [Test @ 127.0.0.1] - Getting user rights for Test
+2018-10-24 10:01:51 [Test worker] INFO :: [Test @ 127.0.0.1] - Logged in as Test
+2018-10-24 10:01:51 [Test worker] INFO :: [Test @ 127.0.0.1] - Fetching Namespace List
+2018-10-24 10:01:51 [Test worker] INFO :: [Test @ 127.0.0.1] - Deleting Test
+2018-10-24 10:01:51 [Test worker] INFO :: [<Anonymous> @ 127.0.0.1] - Try login for Test
+2018-10-24 10:01:51 [Test worker] INFO :: [Test @ 127.0.0.1] - Getting user rights for Test
+2018-10-24 10:01:51 [Test worker] INFO :: [Test @ 127.0.0.1] - Logged in as Test
+2018-10-24 10:01:51 [Test worker] INFO :: [Test @ 127.0.0.1] - Fetching Namespace List
+2018-10-24 10:01:51 [Test worker] INFO :: [<Anonymous> @ 127.0.0.1] - Fetching Namespace List
+2018-10-24 10:01:51 [Test worker] INFO :: [<Anonymous> @ 127.0.0.1] - Querying special page Deadendpages
+2018-10-24 10:01:51 [Test worker] INFO :: [<Anonymous> @ 127.0.0.1] - Fetching Namespace List
+2018-10-24 10:01:51 [Test worker] INFO :: [<Anonymous> @ 127.0.0.1] - Getting global usage for File:Example.jpg
+2018-10-24 10:01:51 [Test worker] INFO :: [<Anonymous> @ 127.0.0.1] - Fetching Namespace List
+2018-10-24 10:01:51 [Test worker] INFO :: [<Anonymous> @ 127.0.0.1] - Doing all pages fetch for all pages
+2018-10-24 10:01:51 [Test worker] INFO :: [<Anonymous> @ 127.0.0.1] - Fetching Namespace List
+2018-10-24 10:01:51 [Test worker] INFO :: [<Anonymous> @ 127.0.0.1] - Fetching log entries -> title: File:Example.jpg, user: Fastily, type: delete
+2018-10-24 10:01:51 [Test worker] INFO :: [<Anonymous> @ 127.0.0.1] - Fetching log entries -> title: Test, user: null, type: null
+2018-10-24 10:01:51 [Test worker] INFO :: [<Anonymous> @ 127.0.0.1] - Fetching Namespace List
+2018-10-24 10:01:51 [Test worker] INFO :: [<Anonymous> @ 127.0.0.1] - Querying recent changes
+2018-10-24 10:01:51 [Test worker] INFO :: [<Anonymous> @ 127.0.0.1] - Fetching Namespace List
+2018-10-24 10:01:51 [Test worker] INFO :: [<Anonymous> @ 127.0.0.1] - Fetching a list of protected titles
+2018-10-24 10:01:51 [Test worker] INFO :: [<Anonymous> @ 127.0.0.1] - Fetching Namespace List
+2018-10-24 10:01:51 [Test worker] INFO :: [<Anonymous> @ 127.0.0.1] - Fetching random page(s)
+2018-10-24 10:01:51 [Test worker] INFO :: [<Anonymous> @ test.wikipedia.org] - Fetching Namespace List
+2018-10-24 10:01:53 [Test worker] INFO :: [<Anonymous> @ test.wikipedia.org] - Fetching Namespace List
+2018-10-24 10:01:53 [Test worker] INFO :: [<Anonymous> @ test.wikipedia.org] - Getting page text of User:Fastily/Sandbox/HelloWorld
+2018-10-24 10:01:53 [Test worker] INFO :: [<Anonymous> @ test.wikipedia.org] - Getting page text of Category:Fastily Test
+2018-10-24 10:01:54 [Test worker] INFO :: [<Anonymous> @ test.wikipedia.org] - Getting page text of User:Fastily/NoPageHere
+2018-10-24 10:01:54 [Test worker] INFO :: [<Anonymous> @ test.wikipedia.org] - Getting categories of User:Fastily/Sandbox/Page/2
+2018-10-24 10:01:54 [Test worker] INFO :: [<Anonymous> @ test.wikipedia.org] - Getting duplicates of File:FastilyTest.svg
+2018-10-24 10:01:54 [Test worker] INFO :: [<Anonymous> @ test.wikipedia.org] - Getting links to User:Fastily/Sandbox/Link/1
+2018-10-24 10:01:54 [Test worker] INFO :: [<Anonymous> @ test.wikipedia.org] - Getting links to User:Fastily/Sandbox/Link/1
+2018-10-24 10:01:55 [Test worker] INFO :: [<Anonymous> @ test.wikipedia.org] - Getting user rights for Fastily
+2018-10-24 10:01:55 [Test worker] INFO :: [<Anonymous> @ test.wikipedia.org] - Fetching local file usage of File:FastilyTest.svg
+2018-10-24 10:01:55 [Test worker] INFO :: [<Anonymous> @ test.wikipedia.org] - Fetching local file usage of File:Fastily NonExistent File.png
+2018-10-24 10:01:55 [Test worker] INFO :: [<Anonymous> @ test.wikipedia.org] - Getting a text extract for User:Fastily/Sandbox/Article
+2018-10-24 10:01:55 [Test worker] INFO :: [<Anonymous> @ test.wikipedia.org] - Splitting User:Fastily/Sandbox/HelloWorld2 by header
+2018-10-24 10:01:56 [Test worker] INFO :: [<Anonymous> @ test.wikipedia.org] - Getting page text of User:Fastily/Sandbox/HelloWorld2
+2018-10-24 10:01:56 [Test worker] INFO :: [<Anonymous> @ test.wikipedia.org] - Splitting User:Fastily/Sandbox/HelloWorld by header
+2018-10-24 10:01:56 [Test worker] INFO :: [<Anonymous> @ test.wikipedia.org] - Getting page text of User:Fastily/Sandbox/HelloWorld
+2018-10-24 10:01:56 [Test worker] INFO :: [<Anonymous> @ test.wikipedia.org] - Splitting User:Fastily/Sandbox/Article by header
+2018-10-24 10:01:56 [Test worker] INFO :: [<Anonymous> @ test.wikipedia.org] - Getting page text of User:Fastily/Sandbox/Article
+2018-10-24 10:01:57 [Test worker] INFO :: [<Anonymous> @ test.wikipedia.org] - Doing all pages fetch for Fastily/Sandbox/Redirect
+2018-10-24 10:01:57 [Test worker] INFO :: [<Anonymous> @ test.wikipedia.org] - Getting image info for File:FastilyTestR.svg
+2018-10-24 10:01:57 [Test worker] INFO :: [<Anonymous> @ test.wikipedia.org] - Getting image info for File:FastilyTest.svg
+2018-10-24 10:01:57 [Test worker] INFO :: [<Anonymous> @ test.wikipedia.org] - Getting templates transcluded on User:Fastily/Sandbox/T
+2018-10-24 10:01:57 [Test worker] INFO :: [<Anonymous> @ test.wikipedia.org] - Doing prefix index search for Fastily/Sandbox/Page/
+2018-10-24 10:01:57 [Test worker] INFO :: [<Anonymous> @ test.wikipedia.org] - Doing all pages fetch for Fastily/Sandbox/Page/
+2018-10-24 10:01:58 [Test worker] INFO :: [<Anonymous> @ test.wikipedia.org] - Fetching contribs of FastilyClone
+2018-10-24 10:01:58 [Test worker] INFO :: [<Anonymous> @ test.wikipedia.org] - Fetching contribs of FastilyClone
+2018-10-24 10:01:58 [Test worker] INFO :: [<Anonymous> @ test.wikipedia.org] - Doing all pages fetch for Fastily/Sandbox/Page/
+2018-10-24 10:01:58 [Test worker] INFO :: [<Anonymous> @ test.wikipedia.org] - Checking to see if title exists: Main Page
+2018-10-24 10:01:59 [Test worker] INFO :: [<Anonymous> @ test.wikipedia.org] - Checking to see if title exists: User:Fastily/Sandbox
+2018-10-24 10:01:59 [Test worker] INFO :: [<Anonymous> @ test.wikipedia.org] - Checking to see if title exists: uSeR:fastily/Sandbox
+2018-10-24 10:01:59 [Test worker] INFO :: [<Anonymous> @ test.wikipedia.org] - Checking to see if title exists: User:Fastily/NoPageHere
+2018-10-24 10:01:59 [Test worker] INFO :: [<Anonymous> @ test.wikipedia.org] - Checking to see if title exists: user:fastily/noPageHere
+2018-10-24 10:01:59 [Test worker] INFO :: [<Anonymous> @ test.wikipedia.org] - Resolving redirect for User:Fastily/Sandbox/Redirect2
+2018-10-24 10:01:59 [Test worker] INFO :: [<Anonymous> @ test.wikipedia.org] - Resolving redirect for User:Fastily/Sandbox/Redirect3
+2018-10-24 10:02:00 [Test worker] INFO :: [<Anonymous> @ test.wikipedia.org] - Getting list of pages that transclude Template:FastilyTest
+2018-10-24 10:02:00 [Test worker] INFO :: [<Anonymous> @ test.wikipedia.org] - Getting list of pages that transclude Template:FastilyTest
+2018-10-24 10:02:00 [Test worker] INFO :: [<Anonymous> @ test.wikipedia.org] - Getting wiki links on User:Fastily/Sandbox/Page
+2018-10-24 10:02:00 [Test worker] INFO :: [<Anonymous> @ test.wikipedia.org] - Getting wiki links on User:Fastily/Sandbox/Page
+2018-10-24 10:02:01 [Test worker] INFO :: [<Anonymous> @ test.wikipedia.org] - Getting revisions from User:FastilyClone/Page/1
+2018-10-24 10:02:01 [Test worker] INFO :: [<Anonymous> @ test.wikipedia.org] - Getting revisions from User:FastilyClone/Page/1
+2018-10-24 10:02:01 [Test worker] INFO :: [<Anonymous> @ test.wikipedia.org] - Getting category members from Fastily Test2
+2018-10-24 10:02:01 [Test worker] INFO :: [<Anonymous> @ test.wikipedia.org] - Getting category members from Fastily Test2
+2018-10-24 10:02:02 [Test worker] INFO :: [<Anonymous> @ test.wikipedia.org] - Getting category members from Fastily Test
+2018-10-24 10:02:02 [Test worker] INFO :: [<Anonymous> @ test.wikipedia.org] - Getting files on User:Fastily/Sandbox/Page
+2018-10-24 10:02:02 [Test worker] INFO :: [<Anonymous> @ test.wikipedia.org] - Fetching uploads for FastilyClone
+2018-10-24 10:02:02 [Test worker] INFO :: [<Anonymous> @ test.wikipedia.org] - Getting category size of Category:Fastily Test
+2018-10-24 10:02:02 [Test worker] INFO :: [<Anonymous> @ test.wikipedia.org] - Getting category size of Category:Fastily Test2
+2018-10-24 10:02:03 [Test worker] INFO :: [<Anonymous> @ test.wikipedia.org] - Getting category size of Category:Does0Not0Exist6
+2018-10-24 10:02:03 [Test worker] INFO :: [<Anonymous> @ test.wikipedia.org] - Getting external links on User:Fastily/Sandbox/ExternalLink
+2018-10-24 10:02:03 [Test worker] INFO :: [<Anonymous> @ test.wikipedia.org] - Fetching Namespace List
+2018-10-24 10:02:04 [Test worker] INFO :: [<Anonymous> @ test.wikipedia.org] - Getting page text of User:Fastily/Sandbox/TPTest2
+2018-10-24 10:02:04 [Test worker] INFO :: [<Anonymous> @ test.wikipedia.org] - Getting page text of User:Fastily/Sandbox/TPTest3

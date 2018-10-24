@@ -1,7 +1,7 @@
 package fastily.jwiki.core;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -26,7 +26,7 @@ class ColorLog {
     /**
      * Creating logger
      */
-    private static Logger logger = LogManager.getLogger(ColorLog.class);
+    private static Logger logger = LoggerFactory.getLogger(ColorLog.class);
 
     /**
      * Flag indicating whether logging with this object is allowed.
