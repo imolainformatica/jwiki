@@ -36,10 +36,10 @@ public class ColorLogTests {
      */
     public static boolean readFileFindString(String filePath, String stringToFind) throws IOException {
          String currentLine;
-
+         BufferedReader bReader=null;
          try
          {
-             BufferedReader bReader = new BufferedReader(new FileReader(filePath));
+             bReader = new BufferedReader(new FileReader(filePath));
 
              while((currentLine = bReader.readLine()) != null) {
                  if (currentLine.contains(stringToFind)) {
@@ -50,7 +50,12 @@ public class ColorLogTests {
          catch (IOException e)
          {
              logger.error("File not found");
-         }
+         }finally {
+			if(bReader!=null) {
+				bReader.close();
+			}
+        	 
+		}
 
          return false;
     }
