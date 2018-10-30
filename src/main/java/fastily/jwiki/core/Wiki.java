@@ -1,7 +1,25 @@
 package fastily.jwiki.core;
 
+import java.net.Proxy;
+import java.nio.file.Path;
+import java.time.Instant;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.regex.Matcher;
+
 import com.google.gson.JsonElement;
-import fastily.jwiki.dwrap.*;
+
+import fastily.jwiki.dwrap.Contrib;
+import fastily.jwiki.dwrap.ImageInfo;
+import fastily.jwiki.dwrap.LogEntry;
+import fastily.jwiki.dwrap.PageSection;
+import fastily.jwiki.dwrap.ProtectedTitleEntry;
+import fastily.jwiki.dwrap.RCEntry;
+import fastily.jwiki.dwrap.Revision;
 import fastily.jwiki.util.FL;
 import fastily.jwiki.util.GSONP;
 import fastily.jwiki.util.Tuple;
@@ -9,15 +27,9 @@ import okhttp3.HttpUrl;
 import okhttp3.Interceptor;
 import okhttp3.Response;
 
-import java.net.Proxy;
-import java.nio.file.Path;
-import java.time.Instant;
-import java.util.*;
-import java.util.regex.Matcher;
-
 /**
  * Main entry point of the jwiki API. This class contains most queries/actions which jwiki can perform on a wiki. Unless
- * stated otherwise, all methods are thread-saf.e
+ * stated otherwise, all methods are thread-safe.
  * 
  * @author Fastily
  */
@@ -303,7 +315,7 @@ public class Wiki
 	 */
 	public void enableLogging(boolean enabled)
 	{
-		conf.log.isLoggingEnabled = enabled;
+		conf.log.enabled = enabled;
 	}
 
 	/**
@@ -352,7 +364,7 @@ public class Wiki
 		try
 		{
 			return wl.containsKey(domain) ? wl.get(domain)
-					: new Wiki(null, null, conf.baseURL.newBuilder().host(domain).build(), null, null, this, conf.log.isLoggingEnabled);
+					: new Wiki(null, null, conf.baseURL.newBuilder().host(domain).build(), null, null, this, conf.log.enabled);
 		}
 		catch (Throwable e)
 		{
