@@ -153,8 +153,8 @@ public class Wiki
 	}
 
 	/**
-	 * Constructor, creates an anonymous Wiki which is not logged in, pointed at the specified API endpoint. Use this
-	 * for third-party/non-WMF Wikis.
+	 * Constructor, creates an anonymous Wiki which is not logged in, pointed at the specified API endpoint. Use this for
+	 * third-party/non-WMF Wikis.
 	 * 
 	 * @param apiEndpoint The API endpoint to use.
 	 */
@@ -644,32 +644,18 @@ public class Wiki
 	}
 
 	/**
-	 * Get all titles in a category.
-	 * 
-	 * @param title The category to query, including the "Category:" prefix.
-	 * @param ns Namespace filter. Any title not in the specified namespace(s) will be ignored. Leave blank to select all
-	 *           namespaces.
-	 * @return The list of titles in the category.
-	 */
-	public ArrayList<String> getCategoryMembers(String title, NS... ns)
-	{
-		return getCategoryMembers(title, -1, ns);
-	}
-
-	/**
 	 * Get a limited number of titles in a category.
 	 * 
 	 * @param title The category to query, including the "Category:" prefix.
-	 * @param cap The maximum number of elements to return. Optional param - set to 0 to disable.
 	 * @param ns Namespace filter. Any title not in the specified namespace(s) will be ignored. Leave blank to select all
 	 *           namespaces. CAVEAT: skipped items are counted against {@code cap}.
 	 * @return The list of titles, as specified, in the category.
 	 */
-	public ArrayList<String> getCategoryMembers(String title, int cap, NS... ns)
+	public ArrayList<String> getCategoryMembers(String title, NS... ns)
 	{
 		conf.log.info(this, "Getting category members from " + title);
 
-		WQuery wq = new WQuery(this, cap, WQuery.CATEGORYMEMBERS).set("cmtitle", convertIfNotInNS(title, NS.CATEGORY));
+		WQuery wq = new WQuery(this, WQuery.CATEGORYMEMBERS).set("cmtitle", convertIfNotInNS(title, NS.CATEGORY));
 		if (ns.length > 0)
 			wq.set("cmnamespace", nsl.createFilter(ns));
 
@@ -721,10 +707,10 @@ public class Wiki
 	}
 
 	/**
-	 * Gets duplicates of a file. Note that results are returned *without* a namespace prefix.
+	 * List duplicates of a file.
 	 * 
 	 * @param title The title to query. PRECONDITION: You MUST include the namespace prefix (e.g. "File:")
-	 * @param localOnly Set to true to restrict results to <b>local</b> duplicates only.
+	 * @param localOnly Set to true to restrict results to <span style="font-weight:bold;">local</span> duplicates only.
 	 * @return Duplicates of this file.
 	 */
 	public ArrayList<String> getDuplicatesOf(String title, boolean localOnly)
@@ -996,8 +982,7 @@ public class Wiki
 
 	/**
 	 * Gets the shared (non-local) duplicates of a file. PRECONDITION: The Wiki this query is run against has the
-	 * <a href="https://www.mediawiki.org/wiki/Extension:GlobalUsage">GlobalUsage</a> extension installed. Note that
-	 * results are returned *without* a namespace prefix.
+	 * <a href="https://www.mediawiki.org/wiki/Extension:GlobalUsage">GlobalUsage</a> extension installed.
 	 * 
 	 * @param title The title of the file to query
 	 * @return An ArrayList containing shared duplicates of the file
@@ -1066,7 +1051,7 @@ public class Wiki
 	 * Gets the list of usergroups (rights) a user belongs to. Sample groups: sysop, user, autoconfirmed, editor.
 	 * 
 	 * @param user The user to get rights information for. Do not include "User:" prefix.
-	 * @return The usergroups {@code user} belongs to.
+	 * @return The usergroups {@code user} belongs to, or null if {@code user} is an IP or non-existent user.
 	 */
 	public ArrayList<String> listUserRights(String user)
 	{
@@ -1129,6 +1114,30 @@ public class Wiki
 	{
 		conf.log.info(this, "Resolving redirect for " + title);
 		return MQuery.resolveRedirects(this, FL.toSAL(title)).get(title);
+	}
+
+	/**
+	 * Performs a search on the Wiki.
+	 * 
+	 * @param query The query string to search the Wiki with.
+	 * @param limit The maximum number of entries to return. Optional, specify {@code -1} to disable (not recommended if
+	 *           your wiki is big).
+	 * @param ns Limit search to these namespaces. Optional, leave blank to disable. The default behavior is to search
+	 *           all namespaces.
+	 * @return A List of titles found by the search.
+	 */
+	public ArrayList<String> search(String query, int limit, NS... ns)
+	{
+		WQuery wq = new WQuery(this, limit, WQuery.SEARCH).set("srsearch", query);
+
+		if (ns.length > 0)
+			wq.set("srnamespace", nsl.createFilter(ns));
+
+		ArrayList<String> l = new ArrayList<>();
+		while (wq.has())
+			l.addAll(FL.toAL(wq.next().listComp("search").stream().map(e -> GSONP.getStr(e, "title"))));
+
+		return l;
 	}
 
 	/**

@@ -105,6 +105,10 @@ public class QueryTests
 		
 		assertFalse(wiki.exists("User:Fastily/NoPageHere"));
 		assertFalse(wiki.exists("user:fastily/noPageHere"));
+		
+		// doesn't actually exist but should still return true
+		assertTrue(wiki.exists("User:Fastily/Sandbox#Test98769876"));
+		
 	}
 
 	/**
@@ -189,20 +193,6 @@ public class QueryTests
 	}
 
 	/**
-	 * Test for getCategoryMembers with limit and filter.
-	 */
-	@Test
-	public void testGetCategoryMembers3()
-	{
-		ArrayList<String> result = wiki.getCategoryMembers("Fastily Test", 2, NS.USER);
-		ArrayList<String> possible = FL.toSAL("User:Fastily/Sandbox/Page/1", "User:Fastily/Sandbox/Page/2",
-				"User:Fastily/Sandbox/Page/3");
-
-		assertEquals(2, result.size());
-		assertTrue(possible.containsAll(result));
-	}
-
-	/**
 	 * Test for getCategorySize
 	 */
 	@Test
@@ -238,6 +228,10 @@ public class QueryTests
 		// Test 2
 		result = wiki.getContribs("FastilyClone", 1, true, NS.FILE);
 		assertEquals("File:FCTest1.png", result.get(0).title);
+		
+		// Test 3 - non-existent user
+		result = wiki.getContribs("Fastilyy", 10, true);
+		assertTrue(result.isEmpty());
 	}
 
 	/**
@@ -249,7 +243,7 @@ public class QueryTests
 		ArrayList<String> result = wiki.getDuplicatesOf("File:FastilyTest.svg", true);
 
 		assertEquals(1, result.size());
-		assertEquals("FastilyTestCopy.svg", result.get(0));
+		assertEquals("File:FastilyTestCopy.svg", result.get(0));
 	}
 
 	/**
@@ -384,6 +378,10 @@ public class QueryTests
 		ArrayList<String> l = wiki.listUserRights("Fastily");
 		assertTrue(l.contains("sysop"));
 		assertTrue(l.contains("autoconfirmed"));
+		
+		// non-existent usernames and IPs should return null
+		assertNull(wiki.listUserRights("10.0.1.1"));
+		assertNull(wiki.listUserRights("Fastilyy"));
 	}
 
 	/**

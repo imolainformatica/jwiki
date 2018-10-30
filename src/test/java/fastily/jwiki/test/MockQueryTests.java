@@ -203,4 +203,36 @@ public class MockQueryTests extends BaseMockTemplate
 		assertTrue(l.contains("Foobar"));
 		assertTrue(l.contains("Cats"));
 	}
+
+	/**
+	 * Tests page searching
+	 */
+	@Test
+	public void testSearch()
+	{
+		addResponse("mockSearch");
+
+		ArrayList<String> l = wiki.search("GitHub", 5, NS.MAIN);
+
+		assertEquals(5, l.size());
+
+		assertTrue(l.contains("GitHub"));
+		assertTrue(l.contains("Git"));
+		assertTrue(l.contains("GitHub Pages"));
+	}
+
+	/**
+	 * Tests fetching of shared duplicate files
+	 */
+	@Test
+	public void testGetSharedDuplicateOf()
+	{
+		addResponse("mockSharedDuplicateFiles");
+
+		ArrayList<String> l = wiki.getSharedDuplicatesOf("File:Test.jpg");
+
+		assertEquals(1, l.size());
+		assertTrue(l.contains("File:TestTest.jpg"));
+	}
+
 }
