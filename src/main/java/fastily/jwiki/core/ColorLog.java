@@ -34,7 +34,6 @@ class ColorLog
 	 * The date formatter prefixing output.
 	 */
 	private static final DateTimeFormatter df = DateTimeFormatter.ofPattern("MMM dd, yyyy hh:mm:ss a");
-
 	/**
 	 * Flag indicating whether logging with this object is allowed.
 	 */
