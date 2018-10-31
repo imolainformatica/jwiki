@@ -5,11 +5,11 @@
 [![License: GPL v3](https://upload.wikimedia.org/wikipedia/commons/8/86/GPL_v3_Blue_Badge.svg)](https://www.gnu.org/licenses/gpl-3.0.en.html)
 [![Patreon](https://upload.wikimedia.org/wikipedia/commons/2/22/Green_Patreon_Donate_Shield_Badge.svg)](https://www.patreon.com/fastily)
 
-Programmatically accessing [Wikipedia](https://en.wikipedia.org/wiki/Main_Page)/[MediaWiki](https://www.mediawiki.org/wiki/MediaWiki) via the [API](https://en.wikipedia.org/w/api.php) is hard ☹️.  I thought it didn't have to be, so I made it easy 😀.  jwiki lets you perform all sorts of crazy API calls with 1️⃣ line of Java.  
+Programmatically accessing [Wikipedia](https://en.wikipedia.org/wiki/Main_Page)/[MediaWiki](https://www.mediawiki.org/wiki/MediaWiki) via the [API](https://en.wikipedia.org/w/api.php) is hard â˜¹ï¸�.  I thought it didn't have to be, so I made it easy ðŸ˜€.  jwiki lets you perform all sorts of crazy API calls with 1ï¸�âƒ£ line of Java.  
 
 Yes, **one** line.  
 
-It's so easy that _anyone_ (including your grandma 👵🏻) can write an application that works with MediaWiki.
+It's so easy that _anyone_ (including your grandma ðŸ‘µðŸ�») can write an application that works with MediaWiki.
 
 Not convinced?  Try out the [examples](https://github.com/fastily/jwiki/wiki/Examples).
 
@@ -37,6 +37,13 @@ Build and publish jwiki on your local machine with
 ./gradlew build publishToMavenLocal
 ```
 
+## Logging
+Using the system property: <strong>ColorLogOldMode </strong>from comand line, will be used the normal logging way, without
+will be used SLF4J logging.
+* <strong> -DColorLogOldMode </strong> for normal logging way
+* <strong> -Dlog4j.configuration="file:PATH\OF\FILE\log4j.properties" </strong> for slf4j logging using an external properties file
+
+
 ## Resources
 * [Examples](https://github.com/fastily/jwiki/wiki/Examples)
 * [Javadocs](https://fastily.github.io/jwiki/docs/jwiki/)
@@ -45,3 +52,4 @@ Build and publish jwiki on your local machine with
 If you like jwiki, then please consider [becoming a patreon sponsor](https://www.patreon.com/fastily)!
 
 Please use [issues](https://github.com/fastily/jwiki/issues) for bug reports and/or feature requests.
+
